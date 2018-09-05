@@ -178,7 +178,7 @@
 							<select name="building-types" id="building-types"
 								onchange="showHideBuildingDetail(this)">
 
-								<option value="none">-- SELECT --</option>
+								<option value="0">-- SELECT --</option>
 								<option value="0">Residential</option>
 								<option value="1">Commercial</option>
 								<option value="2">Corporate</option>
@@ -206,7 +206,7 @@
 						<div class="col-md-4">
 							<label>Number of Apartments</label>
 							<input  type="number" id="residen-app-num" name="number-apartment"
-								min="1" value="1"
+								min="0" value="0"
 						 		onclick="takeValue(this)"
 								onkeyup="takeValue(this)"
 								onchange="takeValue(this)"
@@ -216,7 +216,7 @@
 							<div class="col-md-4">
 								<label>Number of Floors</label>
 								<input  type="number" id="residen-floor-num"
-									name="number-floor" min="1" value="1"
+									name="number-floor" min="0" value="0"
 									onclick="takeValue(this)"
 									onkeyup="takeValue(this)"
 									onchange="takeValue(this)"
@@ -243,6 +243,57 @@
 							</div>
 
 						</div>
+
+						<div class="col-12 hidden-lg hidden-md hidden-sm hidden-xs-down-up">
+							<hr />
+						</div>
+
+						<fieldset id="residential-range">
+
+							<div class="col-md-12">
+								<h2 class="fs-17">PRODUCT RANGE</h2>
+							</div>
+
+							<div class="row">
+
+								<div class="col-md-4">
+									<label for="res-stand-radio">Standard</label>
+									<input type=radio id="res-stand-radio"
+										name="residential-radio" onclick="takeValue(this)"
+										onchange="takeValue(this)" value="7565">
+									</div>
+
+								<div class="col-md-4">
+									<label for="res-prem-radio">Premium</label>
+									<input type=radio id="res-prem-radio"
+										name="residential-radio" onclick="takeValue(this)"
+										onchange="takeValue(this)" value="12345">
+								</div>
+
+								<div class="col-md-4">
+									<label for="res-excel-radio">Excelium</label>
+									<input type=radio id="res-excel-radio"
+										name="residential-radio" onclick="takeValue(this)"
+										onchange="takeValue(this)" value="15400">
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="col-md-12">
+									<hr />
+								</div>
+
+								<div class="col-md-12">
+									<label>Total Estimate</label>
+									$<input type="number" id="residential-total-estimate"
+										name="residential-total-estimate" readonly="true">
+								</div>
+
+							</div>
+
+						</fieldset>
 
 					</fieldset>
 
@@ -300,11 +351,62 @@
 
 									<div class="col-md-12">
 										<label>Number of Escalators Needed</label>
-										<input type="text" id="commercial-total"
+										<input type="text" id="commercial-Esc-total"
 											name="commercial-total" readonly="true" value="0">
 									</div>
 
 								</div>
+
+								<div class="col-12 hidden-lg hidden-md hidden-sm hidden-xs-down-up">
+									<hr />
+								</div>
+
+								<fieldset id="commercial-range">
+
+									<div class="col-md-12">
+										<h2 class="fs-17">PRODUCT RANGE</h2>
+									</div>
+
+									<div class="row">
+
+										<div class="col-md-4">
+											<label for="com-stand-radio">Standard</label>
+											<input type=radio id="com-stand-radio"
+												name="commercial-radio" onclick="takeValue(this)"
+												onchange="takeValue(this)" value="7565">
+											</div>
+
+										<div class="col-md-4">
+											<label for="com-prem-radio">Premium</label>
+											<input type=radio id="com-prem-radio"
+											onclick="takeValue(this)" name="commercial-radio"
+											onchange="takeValue(this)" value="12345">
+										</div>
+
+										<div class="col-md-4">
+											<label for="com-excel-radio">Excelium</label>
+											<input type=radio id="com-excel-radio"
+											onclick="takeValue(this)" name="commercial-radio"
+											onchange="takeValue(this)" value="15400">
+										</div>
+
+									</div>
+
+									<div class="row">
+
+										<div class="col-md-12">
+											<hr />
+										</div>
+
+										<div class="col-md-12">
+											<label>Total Estimate</label>
+											$<input type="number" id="commercial-total-estimate"
+												name="commercial-total" readonly="true">
+										</div>
+
+									</div>
+
+								</fieldset>
 
 							</fieldset>
 
@@ -372,11 +474,62 @@
 
 									<div class="col-md-12">
 										<label>Number of Escalators Needed</label>
-										<input type="text" id="corporate-total"
+										<input type="number" id="corporate-total"
 											name="corporate-total" readonly="true">
 									</div>
 
 								</div>
+
+								<div class="col-12 hidden-lg hidden-md hidden-sm hidden-xs-down-up">
+									<hr />
+								</div>
+
+								<fieldset id="corporate-range">
+
+									<div class="col-md-12">
+										<h2 class="fs-17">PRODUCT RANGE</h2>
+									</div>
+
+									<div class="row">
+
+										<div class="col-md-4">
+											<label for="corp-stand-radio">Standard</label>
+											<input type=radio id="corp-stand-radio"
+												name="corporate-radio" onclick="takeValue(this)"
+												onchange="takeValue(this)" value="7565">
+											</div>
+
+										<div class="col-md-4">
+											<label for="corp-prem-radio">Premium</label>
+											<input type=radio id="corp-prem-radio"
+											onclick="takeValue(this)" name="corporate-radio"
+											onchange="takeValue(this)" value="12345">
+										</div>
+
+										<div class="col-md-4">
+											<label for="corp-excel-radio">Excelium</label>
+											<input type=radio id="corp-excel-radio"
+											onclick="takeValue(this)" name="corporate-radio"
+											onchange="takeValue(this)" value="15400">
+										</div>
+
+									</div>
+
+									<div class="row">
+
+										<div class="col-md-12">
+											<hr />
+										</div>
+
+										<div class="col-md-12">
+											<label>Total Estimate</label>
+											$<input type="number" id="corporate-total-estimate"
+												name="corporate-total" readonly="true">
+										</div>
+
+									</div>
+
+								</fieldset>
 
 							</fieldset>
 
@@ -397,12 +550,22 @@
 
 									<div class="col-md-4">
 										<label>Number of Floors</label>
-										<input  type="number" name="number-floor" min="0">
+										<input  type="number" id="hyb-num-flo"
+											name="number-floor" min="0"
+											onclick="takeValue(this)"
+											onkeyup="takeValue(this)"
+											onchange="takeValue(this)"
+											oninput="takeValue(this)">
 									</div>
 
 									<div class="col-md-4">
 										<label>Number of Basements</label>
-										<input  type="number" name="number-basement" min="0">
+										<input  type="number" id="hyb-num-base"
+											name="number-basement" min="0"
+											onclick="takeValue(this)"
+											onkeyup="takeValue(this)"
+											onchange="takeValue(this)"
+											oninput="takeValue(this)">
 									</div>
 
 								</div>
@@ -416,7 +579,12 @@
 
 									<div class="col-md-4">
 										<label>Number maximum of<br />Occupants per Floor</label>
-										<input  type="number" name="number-occupant" min="0">
+										<input  type="number" id="hyb-num-occupant"
+											name="number-occupant" min="0"
+											onclick="takeValue(this)"
+											onkeyup="takeValue(this)"
+											onchange="takeValue(this)"
+											oninput="takeValue(this)">
 									</div>
 
 									<div class="col-md-4">
@@ -434,10 +602,62 @@
 
 										<div class="col-md-12">
 											<label>Number of Escalators Needed</label>
-											<input type="text" name="hybride-total" readonly="true">
+											<input type="number" id="hybride-total"
+												name="hybride-total" readonly="true">
 										</div>
 
 									</div>
+
+									<div class="col-12 hidden-lg hidden-md hidden-sm hidden-xs-down-up">
+										<hr />
+									</div>
+
+									<fieldset id="hybride-range">
+
+										<div class="col-md-12">
+											<h2 class="fs-17">PRODUCT RANGE</h2>
+										</div>
+
+										<div class="row">
+
+											<div class="col-md-4">
+												<label for="hyb-stand-radio">Standard</label>
+												<input type=radio id="hyb-stand-radio"
+													name="hybride-radio" onclick="takeValue(this)"
+													onchange="takeValue(this)" value="7565">
+												</div>
+
+											<div class="col-md-4">
+												<label for="hyb-prem-radio">Premium</label>
+												<input type=radio id="hyb-prem-radio"
+												onclick="takeValue(this)" name="hybride-radio"
+												onchange="takeValue(this)" value="12345">
+											</div>
+
+											<div class="col-md-4">
+												<label for="hyb-excel-radio">Excelium</label>
+												<input type=radio id="hyb-excel-radio"
+													name="hybride-radio" onclick="takeValue(this)"
+													onchange="takeValue(this)" value="15400">
+											</div>
+
+										</div>
+
+										<div class="row">
+
+											<div class="col-md-12">
+												<hr />
+											</div>
+
+											<div class="col-md-12">
+												<label>Total Estimate</label>
+												$<input type="number" id="hybride-total-estimate"
+													name="hybride-total" readonly="true">
+											</div>
+
+										</div>
+
+									</fieldset>
 
 								</fieldset>
 

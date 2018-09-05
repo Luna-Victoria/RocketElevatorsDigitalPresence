@@ -41,60 +41,137 @@
 
 /**	SUBMISSION FORM MATH
 *************************************************** **/
-Number.isNaN = function (value) {
-        return typeof value === 'number' && isNaN(value);
-    };
-
-
 function takeValue() {
 
-  document.getElementById('commercial-total').value =
-  document.getElementById('commercial-escalator-num').value;
+/** -------------- commercial ---------------------**/
 
-/** ---------------------------------------------- **/
+/** calculation Number Escalators **/
 
-/** division **/
+  var ComEsc = document.getElementById('commercial-Esc-total');
+  var ComNumEsc = document.getElementById('commercial-escalator-num');
+  ComEsc.value = ComNumEsc.value;
+
+
+/** calculation price **/
+  var ComInst;
+  var ComPrise;
+  var ComRadio = document.getElementsByName('commercial-radio');
+  if (ComRadio[0].checked) {
+    ComPrise = ComRadio[0].value * ComEsc.value
+    ComInst = 1.10
+  } else if (ComRadio[1].checked) {
+    ComPrise = ComRadio[1].value * ComEsc.value
+    ComInst = 1.13
+  } else if (ComRadio[2].checked) {
+    ComPrise = ComRadio[2].value * ComEsc.value
+    ComInst = 1.6
+  }
+  var ComTotal = ComPrise * ComInst;
+  document.getElementById('commercial-total-estimate').value = ComTotal;
+
+
+/** --------------- residential -------------------- **/
+
+/** calculation Number Escalators **/
     var div = Number(document.getElementById('residen-app-num').value) /
-    Number(document.getElementById('residen-floor-num').value);
-
-/** division **/
+      Number(document.getElementById('residen-floor-num').value);
     var val = Math.ceil(div / 6);
-
-
-/** multiplication **/
     var mult = Math.ceil(val * 2);
-
-
-/** plus ou mois 20 **/
-    var PlusMinus;
-
+    var ResEsc;
       if (document.getElementById('residen-floor-num').value > 20 ) {
-
-        PlusMinus = mult;
-
+        ResEsc = mult;
       } else {
-        PlusMinus = val;
-
+        ResEsc = val;
       }
+    document.getElementById('residential-total').value = ResEsc;
 
-      document.getElementById('residential-total').value = PlusMinus;
+
+/** calculation price **/
+    var ResInst;
+    var ResPrise;
+    var ResRadio = document.getElementsByName('residential-radio');
+    if (ResRadio[0].checked) {
+      ResPrise = ResRadio[0].value * ResEsc
+      ResInst = 1.10
+    } else if (ResRadio[1].checked) {
+      ResPrise = ResRadio[1].value * ResEsc
+      ResInst = 1.13
+    } else if (ResRadio[2].checked) {
+      ResPrise = ResRadio[2].value * ResEsc
+      ResInst = 1.6
+    }
+    var ResTotal = ResPrise * ResInst;
+    document.getElementById('residential-total-estimate').value = ResTotal;
 
 
-      /** ---------------------------------------------------- **/
 
-      var sum = Number(document.getElementById('corp-num-flo').value) +
+      /** ------------------- corporate -------------------- **/
+
+      var CorpSum = Number(document.getElementById('corp-num-flo').value) +
       Number(document.getElementById('corp-num-base').value);
-
-      var OcpTotal = sum *
+      var CorpOcpTotal = CorpSum *
       Number(document.getElementById('corp-num-occupant').value);
+      var CorpEsc = CorpOcpTotal / 1000;
+      var CorpNumCol = Math.ceil(CorpSum / 20);
 
-      var CorpEsc = OcpTotal / 1000;
+      var CorpEscTotal = CorpEsc / CorpNumCol;
 
-      var NumCol = sum / 20;
+      document.getElementById('corporate-total').value = Math.ceil(CorpEscTotal);
 
-      var EscTotal = CorpEsc / NumCol;
+/** calculation price **/
+      var CorpInst;
+      var CorpPrise;
+      var CorpRadio = document.getElementsByName('corporate-radio');
+      if (CorpRadio[0].checked) {
+        CorpPrise = CorpRadio[0].value * CorpEscTotal
+        CorpInst = 1.10
+      } else if (CorpRadio[1].checked) {
+        CorpPrise = CorpRadio[1].value * CorpEscTotal
+        CorpInst = 1.13
+      } else if (CorpRadio[2].checked) {
+        CorpPrise = CorpRadio[2].value * CorpEscTotal
+        CorpInst = 1.6
+      }
+      var CorpTotal = CorpPrise * CorpInst;
+      document.getElementById('corporate-total-estimate').value = CorpTotal;
 
-      document.getElementById('corporate-total').value = Math.ceil(EscTotal);
+
+      /** ------------------- hybride -------------------- **/
+
+      var HybSum = Number(document.getElementById('hyb-num-flo').value) +
+      Number(document.getElementById('hyb-num-base').value);
+
+      var HybOcpTotal = HybSum *
+      Number(document.getElementById('hyb-num-occupant').value);
+
+      var HybEsc = HybOcpTotal / 1000;
+
+      var HybNumCol = Math.ceil(HybSum / 20);
+
+      var HybEscTotal = HybEsc / HybNumCol;
+
+      document.getElementById('hybride-total').value = Math.ceil(HybEscTotal);
+
+
+/** calculation price **/
+      var HybInst;
+      var HybPrise;
+      var HybRadio = document.getElementsByName('hybride-radio');
+      if (HybRadio[0].checked) {
+        HybPrise = HybRadio[0].value * HybEscTotal
+        HybInst = 1.10
+      } else if (HybRadio[1].checked) {
+        HybPrise = HybRadio[1].value * HybEscTotal
+        HybInst = 1.13
+      } else if (HybRadio[2].checked) {
+        HybPrise = HybRadio[2].value * HybEscTotal
+        HybInst = 1.6
+      }
+      var HybTotal = HybPrise * HybInst;
+      document.getElementById('hybride-total-estimate').value = HybTotal;
+
+
+
 
 
 };
