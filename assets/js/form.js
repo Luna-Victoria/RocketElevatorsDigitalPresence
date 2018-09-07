@@ -67,7 +67,7 @@ function takeValue() {
     ComInst = 1.6
   }
   var ComTotal = ComPrise * ComInst;
-  document.getElementById('commercial-total-estimate').value = ComTotal;
+  document.getElementById('commercial-total-estimate').value = ComTotal.toFixed(2);
 
 
 /** --------------- residential -------------------- **/
@@ -98,7 +98,7 @@ function takeValue() {
       ResInst = 1.6
     }
     var ResTotal = ResPrise * ResInst;
-    document.getElementById('residential-total-estimate').value = ResTotal;
+    document.getElementById('residential-total-estimate').value = ResTotal.toFixed(2);
 
 
 
@@ -130,7 +130,7 @@ function takeValue() {
         CorpInst = 1.6
       }
       var CorpTotal = CorpPrise * CorpInst;
-      document.getElementById('corporate-total-estimate').value = CorpTotal;
+      document.getElementById('corporate-total-estimate').value = CorpTotal.toFixed(2);
 
 
       /** ------------------- hybride -------------------- **/
@@ -160,7 +160,7 @@ function takeValue() {
         HybInst = 1.6
       }
       var HybTotal = HybPrise * HybInst;
-      document.getElementById('hybride-total-estimate').value = HybTotal;
+      document.getElementById('hybride-total-estimate').value = HybTotal.toFixed(2);
 
 
 };
